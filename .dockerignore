@@ -1,0 +1,4 @@
+vars
+Jenkinsfile
+service.yml
+deployment.yml
