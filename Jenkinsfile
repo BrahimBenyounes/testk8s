@@ -4,19 +4,26 @@ pipeline {
     agent any
 
     environment {
-        CERT_PASSWORD = credentials('CERT_PASSWORD')
-        IMAGE_NAME = "devops091/dotnet-app"
-        PASSWORD = credentials('dockerhub')
-        REGISTRY = "https://index.docker.io/v1/"
-        USER = "devops091"
-        APP_NAME = "dotnet-app"
-        DOCKER_HUB_EMAIL = "nanditechbytes@gmail.com"
+       // CERT_PASSWORD = credentials('CERT_PASSWORD')
+        //IMAGE_NAME = "devops091/dotnet-app"
+        //PASSWORD = credentials('dockerhub')
+        //REGISTRY = "https://index.docker.io/v1/"
+        //USER = "devops091"
+        //APP_NAME = "dotnet-app"
+        //DOCKER_HUB_EMAIL = "nanditechbytes@gmail.com"
+       
+        DOCKER_IMAGE_VERSION = '1.0.0'
+        DOCKER_HUB_USERNAME = 'brahim2023'
+        DOCKER_HUB_PASSWORD = 'Lifeisgoodbrahim@@'
+        DOCKER_COMPOSE_FILE = 'docker-compose.yml'
+     
+  
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/nanditechbytes/jenkins-k8-deployment.git'
+                git branch: 'main', url: 'https://github.com/BrahimBenyounes/testk8s.git'
             }
         }
         stage('Build') {
